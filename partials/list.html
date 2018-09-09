@@ -1,0 +1,40 @@
+<div>
+  <div ng-if="loading">Loading..</div>
+  <div ng-if="data">
+    <p>Showing {{ filtered.length }} items</p>
+    <p>
+      <span class="txt-blue">Filter by:</span>
+      <input type="text" ng-model="searchText" autofocus placeholder="Search..">
+      <select ng-model="filterBy">
+        <option ng-repeat="(key,val) in selectOptions" value="{{ key }}">{{ val }}</option>
+      </select>
+    </p>
+    <div>
+      <span class="txt-green">Order By:</span>
+      <select ng-model="orderByValue">
+        <option ng-repeat="(key,val) in selectOptions" value="{{ key }}">{{ val }}</option>
+      </select>{{ ' ' }}
+      <select ng-model="orderByAsc">
+        <option value="">Ascending</option>
+        <option value="reverse">Descending</option>
+      </select>
+    </div>
+    <ul>
+      <a ng-animate="'animate'" href="#!/details/{{data.indexOf(person)}}" ng-repeat="person in data | filter: { [filterBy]: searchText } | orderBy: orderByValue : orderByAsc  as filtered"
+        class="list-link">
+        <li>
+          <div class="left">
+            <img ng-src="{{ person.img }}" alt="{{ person.first_name }} image">
+          </div>
+          <p><span ng-class="{'blue': filterBy === 'first_name', 'green': orderByValue === 'first_name' }">{{
+              person.first_name }}</span> <span ng-class="{'blue': filterBy === 'last_name', 'green': orderByValue === 'last_name'  }">{{
+              person.last_name }}</span></p>
+          <div class="mb-10">{{ person.about }}</div>
+          <small>job: </small><span ng-class="{'blue': filterBy === 'job', 'green': orderByValue === 'job' }"> {{
+            person.job }}</span>
+          <div><small>gender:</small> {{ person.gender | lowercase }}</div>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>
