@@ -6,8 +6,8 @@ myControllers.controller('ListCtrl', [
   function($scope, serviceId) {
     $scope.loading = true
     $scope.selectOptions = serviceId.selectOptions
-    $scope.orderByValue = 'last_name'
-    $scope.filterBy = 'last_name'
+    $scope.orderByValue = 'first_name'
+    $scope.filterBy = 'first_name'
     $scope.orderByAsc = ''
 
     serviceId.getData().then(function(data) {
