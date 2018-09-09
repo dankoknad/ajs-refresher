@@ -41,14 +41,42 @@ input[type=text] {
   padding: 5px;
 }
 
-.active {
-  color: limegreen;
+.txt-blue {
+  color: #00bcd4;
 }
 
-.underline {
-  text-decoration: underline;
-  font-weight: bold;
-  font-style: italic;
+.blue {
+  position: relative;
+  display: inline-block;
+}
+
+.blue:before {
+  position: absolute;
+  top: -2px;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #00bcd4;
+}
+
+.txt-green {
+  color: #8bc34a;
+}
+
+.green {
+  position: relative;
+  display: inline-block;
+}
+
+.green:after {
+  position: absolute;
+  bottom: -1px;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #8bc34a;
 }
 
 img {
