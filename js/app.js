@@ -7,11 +7,11 @@ myApp.config([
     $locationProvider.html5Mode({ enabled: false, requireBase: false })
     $routeProvider
       .when('/list', {
-        templateUrl: '../partials/list.html',
+        templateUrl: '/ajs-refresher/partials/list.html',
         controller: 'ListCtrl'
       })
       .when('/details/:itemId', {
-        templateUrl: '../partials/list-item.html',
+        templateUrl: '/ajs-refresher/partials/list-item.html',
         controller: 'ItemCtrl'
       })
       .otherwise({
