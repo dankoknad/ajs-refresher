@@ -6,7 +6,7 @@ myService.factory('serviceId', [
     var shinyNewServiceInstance = this
 
     shinyNewServiceInstance.getData = function() {
-      return $http.get('js/data.json')
+      return $http.get('/ajs-refresher/js/data.json')
     }
 
     shinyNewServiceInstance.selectOptions = {
