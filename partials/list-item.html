@@ -1,0 +1,14 @@
+<div ng-if="data.img" class="card">
+  <div class="left">
+    <img class="card__img" ng-src="{{ data.img }}" alt="{{ data.first_name }} image">
+  </div>
+  <div class="clearfix">
+    <a href="#!/details/{{getPrev()}}" class="btn">&laquo; prev</a>{{' '}}
+    <a href="#!/details/{{getNext()}}" class="btn">next &raquo;</a>
+    <p>{{ data.first_name }} {{ data.last_name }}</p>
+    <div class="mb-10">{{ data.about }}</div>
+    <div><small>job:</small> {{ data.job }}</div>
+    <div><small>gender:</small> {{ data.gender }}</div>
+    <a href="#!/list" class="btn mt-10">Show entire list</a>
+  </div>
+</div>
